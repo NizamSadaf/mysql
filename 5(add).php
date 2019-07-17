@@ -6,21 +6,6 @@ $dbname="emp";
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 ?>
 <html>
-<style>
-     form
-    {
-        padding-left: 40%; 
-        padding-top: 20%;
-        height: 150px;
-        width: 30px;
-    }
-    input
-    {
-        height:30px;
-        width:200px;
-        margin:5px;
-    }
-</style>
 <body>
 	<form  name="form" action="" method="post">
 		Customer Name:<input type="text" name="cname"><br>
@@ -32,13 +17,9 @@ $conn=mysqli_connect($servername,$username,$password,$dbname);
 	if(isset($_POST['submit']))
 	{
 		$sql="insert into customer (customer_name,customer_street,customer_city) values('$_POST[cname]','$_POST[street]','$_POST[city]');";
-		mysqli_query($conn,$sql);  	
+		mysqli_query($conn,$sql);  
+    }	
  	?>
- 	<script type="text/javascript">
- 		alert("Succesfully Entered");
- 	</script>
- 	<?php
- }
- ?>
 </body>
 </html>
+
